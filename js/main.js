@@ -1,5 +1,14 @@
 // Sai Prashanth Electricals - main.js v2.0
 (function(){
+  // Protected tap-to-call: number assembled at runtime so static scrapers never see full digits.
+  var PH = { cc: "+91", a: "97043", b: "61888" };
+  function phoneHref(){ return "tel:+" + "91" + PH.a + PH.b; }
+  function phoneText(){ return PH.cc + " " + PH.a + " " + PH.b; }
+  document.querySelectorAll("a[data-call]").forEach(function(a){
+    a.setAttribute("href", phoneHref());
+    a.textContent = a.getAttribute("data-text") || phoneText();
+  });
+  document.querySelectorAll("[data-tel]").forEach(function(el){ el.textContent = phoneText(); });
   // Mobile nav
   var burger = document.getElementById("hamburger");
   var nav = document.getElementById("navLinks");
