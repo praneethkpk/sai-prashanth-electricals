@@ -123,3 +123,11 @@ h1,h2,h3{scroll-margin-top:90px;text-wrap:balance}
 /* Responsive */
 @media(max-width:960px){.hero-grid,.grid-3,.grid-2,.grid-4,.footer-grid,.cta-band{grid-template-columns:1fr}.hero h1{font-size:2rem}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.hamburger{display:block}.section{padding:52px 0}.cta-band{padding:28px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Secure lead forms (guidelines: inline errors, honeypot, loading state, long-content handling) */
+.hp{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.field-error{color:#B91C1C;font-size:.82rem;margin:6px 0 0}
+.form-status{font-size:.88rem;min-height:1.4em}
+.form-status.error{color:#B91C1C}
+.btn.is-loading{opacity:.7;pointer-events:none}
+input[aria-invalid="true"],textarea[aria-invalid="true"],select[aria-invalid="true"]{border-color:#B91C1C}
+footer p,footer a{overflow-wrap:anywhere}
