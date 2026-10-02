@@ -114,5 +114,12 @@ table.spec th{background:var(--navy);color:#fff}
 .prose h3{color:var(--navy);margin:20px 0 8px}
 .prose p,.prose li{color:#334155}
 .prose ul{padding-left:20px}
+/* A11y + perf (web-guidelines skill): skip link, focus, reduced-motion */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--yellow);color:var(--navy);font-weight:700;padding:10px 18px;border-radius:0 0 10px 0;z-index:2000}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+h1,h2,h3{scroll-margin-top:90px;text-wrap:balance}
+.num,.stat b{font-variant-numeric:tabular-nums}
 /* Responsive */
 @media(max-width:960px){.hero-grid,.grid-3,.grid-2,.grid-4,.footer-grid,.cta-band{grid-template-columns:1fr}.hero h1{font-size:2rem}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.hamburger{display:block}.section{padding:52px 0}.cta-band{padding:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}

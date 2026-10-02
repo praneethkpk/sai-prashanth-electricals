@@ -4,7 +4,7 @@
   // Mobile nav
   var burger = document.getElementById("hamburger");
   var nav = document.getElementById("navLinks");
-  if(burger && nav){ burger.addEventListener("click", function(){ nav.classList.toggle("open"); }); }
+  if(burger && nav){ burger.addEventListener("click", function(){ var open = nav.classList.toggle("open"); burger.setAttribute("aria-expanded", open ? "true" : "false"); }); }
   // Year
   var y = document.getElementById("year"); if(y){ y.textContent = new Date().getFullYear(); }
   // All lead forms -> WhatsApp + thank-you redirect
